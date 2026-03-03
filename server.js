@@ -6,6 +6,16 @@ const jwt = require("jsonwebtoken");
 const Order = require("./models/Order");
 const bcrypt = require("bcrypt");
 const app = express();
+const PORT = process.env.PORT || 5000;
+const cors = require("cors");
+
+app.listen(PORT, () => {
+  console.log("Server running on port " + PORT);
+});
+
+app.use(cors({
+  origin: "https://faceyogavn.netlify.app"
+}));
 
 // middleware
 app.use(cors());
@@ -192,5 +202,6 @@ const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
 
 //console.log(Order.schema.obj);
