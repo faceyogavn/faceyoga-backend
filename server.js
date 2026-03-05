@@ -8,16 +8,11 @@ const bcrypt = require("bcrypt");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log("Server running on port " + PORT);
-});
-
 app.use(cors({
   origin: "https://faceyogavn.netlify.app"
 }));
 
 // middleware
-app.use(cors());
 app.use(express.json());
 
 // 🔥 KẾT NỐI MONGODB
@@ -203,5 +198,6 @@ app.listen(PORT, () => {
 
 
 //console.log(Order.schema.obj);
+
 
 
