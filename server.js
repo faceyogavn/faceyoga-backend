@@ -16,8 +16,16 @@ app.use(cors({
 app.use(express.json());
 
 // 🔥 KẾT NỐI MONGODB
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected ✅"))
+mongoose.connect(process.env.MONGO_URI,
+                 {  useNewUrlParser: true,
+                    useUnifiedTopology: true
+                  })
+  .then(() => {    
+    console.log("MongoDB connected ✅"));
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
   .catch(err => console.log(err));
   
 // route test
@@ -192,12 +200,11 @@ app.post("/api/admin/refresh", (req, res) => {
 
 
 // start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+
 
 
 //console.log(Order.schema.obj);
+
 
 
 
