@@ -29,7 +29,7 @@ app.use(limiter)
 
 // CORS whitelist
 const allowedOrigins = [
- "https://faceyoga.vn",
+ "https://faceyoga.vn/app",
  "https://faceyogavn.netlify.app"
 ]
 
@@ -65,3 +65,4 @@ const PORT = process.env.PORT || 3000
 app.listen(PORT, ()=>{
  console.log("Server running on", PORT)
 })
+
