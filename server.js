@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: "https://faceyogavn.netlify.app"
+  origin: "https://faceyoga.vn"
 }));
 
 // middleware
@@ -204,6 +204,7 @@ app.post("/api/admin/refresh", (req, res) => {
 
 
 //console.log(Order.schema.obj);
+
 
 
 
