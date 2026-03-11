@@ -1,5 +1,5 @@
 const router = require("express").Router()
-const Order = require("../models/Order")
+const Order = require("../models/Orders")
 
 router.post("/", async (req,res)=>{
 
@@ -10,5 +10,6 @@ router.post("/", async (req,res)=>{
  res.json(order)
 
 })
+
 
 module.exports = router
